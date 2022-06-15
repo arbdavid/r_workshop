@@ -46,7 +46,7 @@ View(tail(df), 'Tail')
 
 # Ram
 my_object <- 'David'
-rm('David')
+rm(my_object)
 
 # Disk
 rm('df')

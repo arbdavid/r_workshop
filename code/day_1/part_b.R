@@ -163,22 +163,51 @@ FALSE | TRUE
 
 
 ############################## IMPORTING FILES #################################
+# READ CSV
+star_wars <- readr::read_csv('./data/star_wars.csv')
+star_wars <- read.csv('./data/star_wars.csv')
 
+# Stata, SPSS, SAS, etc
+haven::read_dta()
+haven::read_spss()
+haven::read_sas()
 
+# Feather
+feather::read_feather()
 
 
 ############################## SAVING DATA #####################################
+readr::write_csv(star_wars, './data/star_wars_2.csv')
+write.csv()
 
+# Stata, SPSS, SAS, etc
+haven::write_dta()
+haven::write_spss()
+haven::write_sas()
 
+# Feather
+feather::write_feather()
 
 
 
 ############################## BASIC TIDYVERSE #################################
 library(tidyverse)
 
+df <- mtcars
+
+# Pipes
+df <- df %>% 
+    mutate(mpg_sq = mpg^2)
+
+df_select <- df %>% 
+    select(mpg_sq)
+
+df_select <- df %>% 
+    select(-mpg_sq)
 
 
-
+df_filter <- df %>% 
+    filter(cyl == 4)
 
 
 
